@@ -14,8 +14,3 @@ jobs:
       run: docker build . -f Dockerfile --tag registry.sbx320.net/rd2l/inhouse:latest
     - name: Docker Push
       run: docker push registry.sbx320.net/rd2l/inhouse:latest
-    - name: Deploy
-      env: 
-          DEPLOY_WEBHOOK: ${{ secrets.DEPLOY_WEBHOOK_DISCORD }}
-      run: 
-        curl -k -X POST $DEPLOY_WEBHOOK
